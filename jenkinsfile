@@ -32,7 +32,7 @@ pipeline {
                 }
                 withCredentials([usernamePassword(credentialsId: '160ba498-1cd5-4113-83ac-832e12d399a0', passwordVariable: 'pass', usernameVariable: 'user')]) {
                 sh """docker pull ivos89/student:1.0.0
-                docker run -d ivos89/student:1.0.0"""
+                docker run -d -p 8081:8081 ivos89/student:1.0.0"""
                 }
             }
         }
