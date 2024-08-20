@@ -20,7 +20,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: '160ba498-1cd5-4113-83ac-832e12d399a0', passwordVariable: 'pass', usernameVariable: 'user')]) {
                 sh """docker build -t ivos89/student:1.0.0 .
-                docker login -u %user% --password %pass%
+                docker login -u $user --password $pass
                 docker push ivos89/student:1.0.0"""
                 }
             }
